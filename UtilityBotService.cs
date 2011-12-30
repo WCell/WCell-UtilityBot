@@ -10,15 +10,16 @@ using System.Threading.Tasks;
 
 namespace WCellUtilityBot
 {
-    public partial class Service1 : ServiceBase
+    public partial class UtilityBotService : ServiceBase
     {
-        public Service1()
+        public UtilityBotService()
         {
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
+
         }
 
         protected override void OnStop()

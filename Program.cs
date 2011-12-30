@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WCellUtilityBot
@@ -12,14 +14,20 @@ namespace WCellUtilityBot
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main()
+        static void Main(string[] args)
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
-			{ 
-				new Service1() 
-			};
-            ServiceBase.Run(ServicesToRun);
+            if (args != null && args.Length > 0 && Regex.IsMatch("console|c|con",args.ToString()))
+            {
+                Thread.Sleep(10);
+            }
+            else
+            {
+                ServiceBase[] servicesToRun = new ServiceBase[] 
+                                                  { 
+                                                      new UtilityBotService() 
+                                                  };
+                ServiceBase.Run(servicesToRun);
+            }
         }
     }
 }
