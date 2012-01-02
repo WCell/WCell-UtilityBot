@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.Text;
 using Squishy.Irc;
@@ -160,3 +160,4 @@ namespace Squishy.Irc.ACL {
         }
     }
 }
+*/
