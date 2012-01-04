@@ -16,14 +16,14 @@ namespace Squishy.Irc.ACL {
         /// <summary>
         /// Command -> Accessor-Id -> List of rules
         /// </summary>
-        readonly IDictionary<Command<IrcCmdArgs>, IDictionary<CommandAccessor, List<CommandAccessRule>>> ruleMap;
+        readonly IDictionary<: IrcCommand, IDictionary<CommandAccessor, List<CommandAccessRule>>> ruleMap;
         public CommandAccessController(IrcClient irc) {
             this.irc = irc;
-            ruleMap = new Dictionary<Command<IrcCmdArgs>, IDictionary<CommandAccessor, List<CommandAccessRule>>>();
+            ruleMap = new Dictionary<: IrcCommand, IDictionary<CommandAccessor, List<CommandAccessRule>>>();
         }
 
         public void AddRule(CommandAccessRule rule) {
-            foreach (Command<IrcCmdArgs> cmd in rule.Commands)
+            foreach (: IrcCommand cmd in rule.Commands)
             {
                 IDictionary<CommandAccessor, List<CommandAccessRule>> rules;
                 if (!ruleMap.TryGetValue(cmd, out rules)) {
@@ -73,7 +73,7 @@ namespace Squishy.Irc.ACL {
         /// <summary>
         /// Returns wether or not Command cmd may be triggered by the given trigger.
         /// </summary>
-        public bool MayExecute(CmdTrigger<IrcCmdArgs> trigger, Command<IrcCmdArgs> cmd)
+        public bool MayExecute(CmdTrigger<IrcCmdArgs> trigger, : IrcCommand cmd)
         {
 
             return DefaultAccess;
@@ -82,22 +82,22 @@ namespace Squishy.Irc.ACL {
 
     public class CommandAccessRule {
         public bool Allow;
-        List<Command<IrcCmdArgs>> commands;
+        List<: IrcCommand> commands;
         IDictionary<string,CommandAccessor> accessors;
 
         public CommandAccessRule(bool Allow)
-            : this(allow, new List<Command<IrcCmdArgs>>(),
+            : this(allow, new List<: IrcCommand>(),
                                                         new Dictionary<string, CommandAccessor>()) {
         }
 
-        public CommandAccessRule(bool allow, List<Command<IrcCmdArgs>> commands,
+        public CommandAccessRule(bool allow, List<: IrcCommand> commands,
                                     IDictionary<string, CommandAccessor> accessors) {
             this.Allow = allow;
             this.commands = commands;
             this.accessors = accessors;
         }
 
-        public List<Command<IrcCmdArgs>> Commands
+        public List<: IrcCommand> Commands
         {
             get {
                 return commands;

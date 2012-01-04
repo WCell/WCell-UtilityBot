@@ -16,18 +16,16 @@ namespace WCellUtilityBot
         /// </summary>
         static void Main(string[] args)
         {
-            if (args != null && args.Length > 0 && Regex.IsMatch("console|c|con",args.ToString()))
+            if (args != null && args.Length > 0 && args.Any(arg => arg.StartsWith("con") | arg.StartsWith("console") | arg == "c"))
             {
-                Thread.Sleep(10);
+                UtilityBotService.Run(true);
+                do {
+                        Thread.Sleep(10);
+                   }
+                while (true) ;
             }
-            else
-            {
-                ServiceBase[] servicesToRun = new ServiceBase[] 
-                                                  { 
-                                                      new UtilityBotService() 
-                                                  };
-                ServiceBase.Run(servicesToRun);
-            }
+            ServiceBase[] servicesToRun = new ServiceBase[] { new UtilityBotService() };
+            ServiceBase.Run(servicesToRun);
         }
     }
 }

@@ -681,7 +681,14 @@ namespace Squishy.Irc
 
 		public virtual bool TriggersCommand(IrcUser user, IrcChannel chan, StringStream input)
 		{
-		    return CommandHandler.RemoteCommandPrefixes.Iterate(prefix => { if (input.String.StartsWith(prefix, StringComparison.CurrentCultureIgnoreCase)) { input.Skip(prefix.Length); return true; } return false; });
+		    return CommandHandler.RemoteCommandPrefixes.Iterate(prefix =>
+		                                                            {
+		                                                                if (input.String.StartsWith(prefix, StringComparison.CurrentCultureIgnoreCase))
+		                                                                {
+		                                                                    input.Skip(prefix.Length); 
+                                                                            return false;
+		                                                                } return true;
+		                                                            });
 		}
 
 	    internal void NoticeNotify(IrcUser user, IrcChannel chan, StringStream text)
@@ -914,8 +921,8 @@ namespace Squishy.Irc
 
 		internal virtual void ChanCreationTimeNotify(IrcChannel chan, DateTime creationTime)
 		{
-			chan.ChanCreationTimeSentNotify(creationTime);
-			OnChanCreationTime(chan, creationTime);
+            chan.ChanCreationTimeSentNotify(creationTime);
+            OnChanCreationTime(chan, creationTime);
 		}
 
 		/// <summary>
@@ -1161,7 +1168,7 @@ namespace Squishy.Irc
 			OnCommandFail(trigger, ex);
 		}
 
-		/// <summary>
+		/*/// <summary>
 		/// Return wether or not a command may be triggered. 
 		/// Is called everytime, a command is triggered
 		/// By default Squishy is set to do nothing until you override this and add an auth system
@@ -1169,15 +1176,14 @@ namespace Squishy.Irc
 		public bool MayTriggerCommand(CmdTrigger<IrcCmdArgs> cmdTrigger)
 		{
 			return MayTriggerCommand(cmdTrigger, cmdTrigger.Command.RootCmd);
-		}
-
+		}*/
 		/// <summary>
-		/// Return wether or not a command may be triggered. 
+		/// Return wether or not a command may be triggered.
 		/// Is called everytime, a command is triggered
 		/// By default Squishy is set to do nothing until you override this and add an auth system
 		/// </summary>
 		/// <param name="cmd">A command.</param>
-		public virtual bool MayTriggerCommand(CmdTrigger<IrcCmdArgs> trigger, Command<IrcCmdArgs> cmd)
+		public virtual bool MayTriggerCommand(CmdTrigger<IrcCmdArgs> trigger, IrcCommand cmd)
 		{
 			return trigger.Args.User == null || trigger.Args.User == Me;
 		}

@@ -236,7 +236,8 @@ namespace Squishy.Irc.Protocol
             
             AddPacketHandler("JOIN", packet =>
                                          {
-                                             packet.IrcClient.JoinNotify(packet.User, packet.Content.NextWord());
+                                             string chanName = packet.Content.NextWord();
+                                             packet.IrcClient.JoinNotify(packet.User, chanName.Trim(':'));
                                          });
 			AddPacketHandler("485", packet =>										// cannot join channel
 			{

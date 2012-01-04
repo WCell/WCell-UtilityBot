@@ -22,13 +22,13 @@ namespace Squishy.Irc.Commands
 					{
 						return true;
 					}
-					return client.MayTriggerCommand(trigger, rootCmd);
+					return client.MayTriggerCommand(trigger, (IrcCommand) rootCmd);
 				};
 
 
-			AddCmdsOfAsm(typeof(Command<IrcCmdArgs>).Assembly);
+			AddCmdsOfAsm(typeof(IrcCommand).Assembly);
 			var callAsm = Assembly.GetEntryAssembly();
-			if (callAsm != null && callAsm != typeof(Command<IrcCmdArgs>).Assembly)
+			if (callAsm != null && callAsm != typeof(IrcCommand).Assembly)
 			{
 				AddCmdsOfAsm(callAsm);
 			}

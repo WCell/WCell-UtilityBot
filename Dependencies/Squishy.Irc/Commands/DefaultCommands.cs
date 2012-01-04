@@ -10,7 +10,7 @@ using WCell.Util.Commands;
 
 namespace Squishy.Irc.Commands
 {
-	/*public class VersionCommand : Command<IrcCmdArgs>
+	/*public class VersionCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -27,7 +27,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
     */
-	public class JoinCommand : Command<IrcCmdArgs>
+	public class JoinCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -58,7 +58,7 @@ namespace Squishy.Irc.Commands
 		//}
 	}
 
-	/*public class AuthCommand : Command<IrcCmdArgs>
+	/*public class AuthCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -118,7 +118,7 @@ namespace Squishy.Irc.Commands
 		//}
 	}*/
 
-	public class NickCommand : Command<IrcCmdArgs>
+	public class NickCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -134,7 +134,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class TopicCommand : Command<IrcCmdArgs>
+	public class TopicCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -160,7 +160,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class PartCommand : Command<IrcCmdArgs>
+	public class PartCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -182,7 +182,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class PartThisCommand : Command<IrcCmdArgs>
+	public class PartThisCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -199,7 +199,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class MsgCommand : Command<IrcCmdArgs>
+	public class MsgCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -215,9 +215,9 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class NoticeCommand : Command<IrcCmdArgs>
+	public class NoticeCommand : IrcCommand
 	{
-		protected override void Initialize()
+	    protected override void Initialize()
 		{
 			Init("Notice");
 			EnglishParamInfo = "<Target> <Text>";
@@ -231,7 +231,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class CtcpRequestCommand : Command<IrcCmdArgs>
+	public class CtcpRequestCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -248,7 +248,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class KickCommand : Command<IrcCmdArgs>
+	public class KickCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -266,7 +266,7 @@ namespace Squishy.Irc.Commands
 	}
 
 
-	public class KickMaskCommand : Command<IrcCmdArgs>
+	public class KickMaskCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -294,7 +294,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class ModeCommand : Command<IrcCmdArgs>
+	public class ModeCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -310,7 +310,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class BigBanCommand : Command<IrcCmdArgs>
+	public class BigBanCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -338,7 +338,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class UnbanCommand : Command<IrcCmdArgs>
+	public class UnbanCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -354,7 +354,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class InviteCommand : Command<IrcCmdArgs>
+	public class InviteCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -376,7 +376,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class InviteMeCommand : Command<IrcCmdArgs>
+	public class InviteMeCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -392,7 +392,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class BanListCommand : Command<IrcCmdArgs>
+	public class BanListCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -408,7 +408,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class SetInfoCommand : Command<IrcCmdArgs>
+	public class SetInfoCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -424,7 +424,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class SetPwCommand : Command<IrcCmdArgs>
+	public class SetPwCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -440,7 +440,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class SetUsernameCommand : Command<IrcCmdArgs>
+	public class SetUsernameCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -456,7 +456,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class SetNicksCommand : Command<IrcCmdArgs>
+	public class SetNicksCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -472,7 +472,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class ConnectCommand : Command<IrcCmdArgs>
+	public class ConnectCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -500,7 +500,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class DisconnectCommand : Command<IrcCmdArgs>
+	public class DisconnectCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -516,7 +516,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class SetExternalIPCommand : Command<IrcCmdArgs>
+	public class SetExternalIPCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -532,7 +532,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
     
-	public class DccSendCommand : Command<IrcCmdArgs>
+	public class DccSendCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -555,7 +555,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	public class DccChatCommand : Command<IrcCmdArgs>
+	public class DccChatCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -581,7 +581,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 
-	//public class StatsCommand : Command<IrcCmdArgs> {
+	//public class StatsCommand : IrcCommand {
 	//    protected override void Initialize()
 	//        {
 	//		  Init("Stats");
@@ -594,7 +594,7 @@ namespace Squishy.Irc.Commands
 	//    }
 	//}
     
-	public class SendCommand : Command<IrcCmdArgs>
+	public class SendCommand : IrcCommand
 	{
 		protected override void Initialize()
 		{
@@ -610,7 +610,7 @@ namespace Squishy.Irc.Commands
 		}
 	}
 	/*
-	public class EchoCommand : Command<IrcCmdArgs> {
+	public class EchoCommand : IrcCommand {
 		protected override void Initialize() {
 Init("echo","e","ech") {
 			EnglishParamInfo ="Echo <text>";

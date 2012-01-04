@@ -17,9 +17,16 @@ namespace WCellUtilityBot
             InitializeComponent();
         }
 
+        public static void Run(bool consoleMode)
+        {
+            Task.Run(() => { IrcConnection.Irc.BeginConnect(Properties.Settings.Default.IrcServer, Properties.Settings.Default.IrcPort);
+                               IrcConnection.Irc.ConsoleMode = consoleMode;
+            });
+        }
+
         protected override void OnStart(string[] args)
         {
-
+            Run(false);
         }
 
         protected override void OnStop()

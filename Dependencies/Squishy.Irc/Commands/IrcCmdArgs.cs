@@ -2,18 +2,8 @@
 
 namespace Squishy.Irc.Commands
 {
-    public enum AccountLevel
-    {
-        Guest = 1,
-        User = 2,
-        Staff = 3,
-        SeniorAssistants = 4,
-        Admin = 5,
-        SuperAdmin = 6
-    }
 	public class IrcCmdArgs : ICmdArgs
 	{
-        public AccountLevel RequiredAccountLevel { get; set; }
 		public IrcCmdArgs(IrcUser user, IrcChannel channel)
 		{
 			User = user;

@@ -120,6 +120,7 @@
     <Compile Include="Auth\NickServAuthenticator.cs" />
     <Compile Include="Commands\DefaultCommands.cs" />
     <Compile Include="Commands\IrcCmdTrigger.cs" />
+    <Compile Include="Commands\IrcCommand.cs" />
     <Compile Include="Commands\IrcCommandHandler.Actions.cs" />
     <Compile Include="Commands\IrcCommandHandler.cs" />
     <Compile Include="Commands\CommandAccessController.cs" />
