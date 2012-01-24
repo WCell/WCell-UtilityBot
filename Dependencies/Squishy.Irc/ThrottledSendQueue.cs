@@ -13,8 +13,8 @@ namespace Squishy.Irc
 
 		private static int s_charsPerSecond = 40;
 
-		//private static int m_maxModCount = 512;
-		private static int m_maxModCount = 20;
+		//private static int m_maxModCount = 20;
+		private static int m_maxModCount = 512;
 		private readonly Timer m_delayTimer;
 		private readonly Queue m_queue;
 		private DateTime m_last = DateTime.Now;

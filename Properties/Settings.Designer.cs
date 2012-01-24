@@ -82,5 +82,53 @@ namespace WCellUtilityBot.Properties {
                 this["IrcNick"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("host")]
+        public string MysqlHost {
+            get {
+                return ((string)(this["MysqlHost"]));
+            }
+            set {
+                this["MysqlHost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("user")]
+        public string MysqlUser {
+            get {
+                return ((string)(this["MysqlUser"]));
+            }
+            set {
+                this["MysqlUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("pass")]
+        public string MysqlPassword {
+            get {
+                return ((string)(this["MysqlPassword"]));
+            }
+            set {
+                this["MysqlPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("database")]
+        public string MysqlDB {
+            get {
+                return ((string)(this["MysqlDB"]));
+            }
+            set {
+                this["MysqlDB"] = value;
+            }
+        }
     }
 }

@@ -17,10 +17,14 @@ namespace WCellUtilityBot
         };
 
         public bool ConsoleMode;
+        protected override void OnConnecting()
+        {
+            base.OnConnecting();
+            if (ConsoleMode)
+                protHandler.PacketReceived += Console.WriteLine;
+        }
         protected override void Perform()
         {
-            if(ConsoleMode)
-            protHandler.PacketReceived += Console.WriteLine;
         }
         protected override void OnBeforeSend(string text)
         {

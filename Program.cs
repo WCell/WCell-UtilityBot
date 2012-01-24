@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WCellUtilityBot
 {
-    static class Program
+    class Program
     {
         /// <summary>
         /// The main entry point for the application.
