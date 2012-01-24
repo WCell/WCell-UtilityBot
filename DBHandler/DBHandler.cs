@@ -19,7 +19,6 @@ namespace WCellUtilityBot.DBHandler
         public static ISessionFactory CreateSessionFactory()
         {
             var fluconf = Fluently.Configure();
-            ISessionFactory sessionFactory = null;
             var dbconf = MySQLConfiguration.Standard.ConnectionString(builder =>
                                                                                     {
                                                                                         builder.Server(Properties.Settings.Default.MysqlHost);

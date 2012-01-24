@@ -59,7 +59,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Util.cs" />
     <Compile Include="UtilityBotService.cs">
       <SubType>Component</SubType>
     </Compile>
