@@ -18,9 +18,10 @@ namespace WCellUtilityBot
 
         public static void Run(bool consoleMode)
         {
-            Task.Run(() => { IrcConnection.Irc.BeginConnect(Properties.Settings.Default.IrcServer, Properties.Settings.Default.IrcPort);
+            TaskEx.Run(() => { IrcConnection.Irc.BeginConnect(Properties.Settings.Default.IrcServer, Properties.Settings.Default.IrcPort);
                                IrcConnection.Irc.ConsoleMode = consoleMode;
             });
+            TaskEx.Run(CommitListener.StartListener);
         }
 
         protected override void OnStart(string[] args)
@@ -30,6 +31,8 @@ namespace WCellUtilityBot
 
         protected override void OnStop()
         {
+            IrcConnection.Irc.Client.Disconnect();
+            Environment.Exit(0);
         }
     }
 }

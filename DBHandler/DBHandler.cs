@@ -11,6 +11,7 @@ using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using WCellUtilityBot.Entities;
 
 namespace WCellUtilityBot.DBHandler
 {
@@ -27,7 +28,7 @@ namespace WCellUtilityBot.DBHandler
                                                                                         builder.Database(Properties.Settings.Default.MysqlDB);
                                                                                     });
             fluconf.Database(dbconf);
-            fluconf.Mappings(m => m.FluentMappings.AddFromAssemblyOf<Program>());
+            fluconf.Mappings(m => m.FluentMappings.AddFromAssemblyOf<Account>());
             fluconf.ExposeConfiguration(configuration => new SchemaUpdate(configuration).Execute(false,true));
             return fluconf.BuildSessionFactory();
         }
