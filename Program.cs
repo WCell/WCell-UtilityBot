@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WCellUtilityBot
 {
-    class Program
+    static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -22,9 +22,9 @@ namespace WCellUtilityBot
                 do {
                         Thread.Sleep(10);
                    }
-                while (true) ;
+                while (true);
             }
-            ServiceBase[] servicesToRun = new ServiceBase[] { new UtilityBotService() };
+            var servicesToRun = new ServiceBase[] { new UtilityBotService() };
             ServiceBase.Run(servicesToRun);
         }
     }

@@ -622,7 +622,7 @@ namespace Squishy.Irc
 
 			if (TriggersCommand(user, chan, text))
 			{
-				m_CommandHandler.Execute(new MsgCmdTrigger(text, user, chan));
+				Task.Factory.StartNew(()=>m_CommandHandler.Execute(new MsgCmdTrigger(text, user, chan)));
 			}
 		}
 
@@ -698,7 +698,7 @@ namespace Squishy.Irc
 			OnNotice(user, chan, text);
 			if (TriggersCommand(user, chan, text))
 			{
-				Task.Run(()=>m_CommandHandler.Execute(new NoticeCmdTrigger(text, user, chan)));
+				Task.Factory.StartNew(()=>m_CommandHandler.Execute(new NoticeCmdTrigger(text, user, chan)));
 			}
 		}
 
