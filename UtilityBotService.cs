@@ -32,7 +32,6 @@ namespace WCellUtilityBot
         protected override void OnStop()
         {
             IrcConnection.Irc.Client.Disconnect();
-            Environment.Exit(0);
         }
     }
 }
