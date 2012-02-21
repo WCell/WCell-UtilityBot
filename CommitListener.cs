@@ -10,14 +10,14 @@ namespace WCellUtilityBot
 {
     public class FisheyeWebHookData
     {
-        public repository Repository { get; set; }
-        public changeset Changeset { get; set; }
+        public Repository Repository { get; set; }
+        public Changeset Changeset { get; set; }
     }
-    public class repository
+    public class Repository
     {
         public string Name { get; set; }
     }
-    public class changeset
+    public class Changeset
     {
         public string Csid { get; set; }
         public string Displayid { get; set; }
