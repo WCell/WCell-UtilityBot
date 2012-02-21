@@ -42,8 +42,27 @@ namespace WCellUtilityBot
                 var obj = JsonSerializer.DeserializeFromStream<FisheyeWebHookData>(context.Request.InputStream);
                 context.Response.StatusCode = (int) HttpStatusCode.OK;
                 context.Response.Close();
-                IrcConnection.Irc.CommandHandler.Msg(Properties.Settings.Default.CommitNotificationChannel, string.Format("Commit-> Project: {0} Author: {1} Branch: {2} Commit Note: {3}", obj.Repository.Name, obj.Changeset.Author, obj.Changeset.Branches[0], obj.Changeset.Comment));
+                IrcConnection.Irc.CommandHandler.Msg(Properties.Settings.Default.CommitNotificationChannel, string.Format("Commit-> Project: {0} Author: {1} Branch: {2} Commit Note: {3}", obj.Repository.Name, StripEmailFromAuthor(obj.Changeset.Author), obj.Changeset.Branches[0], obj.Changeset.Comment));
             }
+        }
+
+        private static string StripEmailFromAuthor(string author)
+        {
+            try
+            {
+                if (author.Contains("@"))
+                {
+                    var start = author.IndexOf('<');
+                    var end = author.Length;
+                    return author.Remove(start, end);
+                }
+
+            }
+            catch (Exception)
+            {
+                return author;
+            }
+            return author;
         }
     }
 }
