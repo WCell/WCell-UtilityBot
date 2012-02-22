@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChannelManagment\AutoVoiceUser.cs" />
     <Compile Include="CommitListener.cs" />
     <Compile Include="DBHandler\DBHandler.cs" />
     <Compile Include="Entities\Account.cs" />

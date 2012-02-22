@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Squishy.Irc;
+using WCellUtilityBot.ChannelManagment;
 
 namespace WCellUtilityBot
 {
@@ -25,15 +26,22 @@ namespace WCellUtilityBot
         }
         protected override void Perform()
         {
+            base.Perform();
         }
         protected override void OnBeforeSend(string text)
         {
+            base.OnBeforeSend(text);
             if (ConsoleMode)
             Console.WriteLine(text);
         }
         public override bool MayTriggerCommand(WCell.Util.Commands.CmdTrigger<Squishy.Irc.Commands.IrcCmdArgs> trigger, Squishy.Irc.Commands.IrcCommand cmd)
         {
             return trigger.Args.User.UserLevel >= cmd.RequiredAccountLevel;
+        }
+        protected override void OnJoin(IrcUser user, IrcChannel chan)
+        {
+            base.OnJoin(user, chan);
+            new AutoVoiceUser(user, chan);
         }
     }
 }
