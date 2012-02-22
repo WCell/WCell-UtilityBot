@@ -54,7 +54,7 @@ namespace WCellUtilityBot
                 if (author.Contains("@"))
                 {
                     var start = author.IndexOf('<');
-                    var end = author.Length-1;
+                    var end = author.Length - start;
                     return author.Remove(start, end);
                 }
 
