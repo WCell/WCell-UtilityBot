@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -53,13 +54,14 @@ namespace WCellUtilityBot
                 if (author.Contains("@"))
                 {
                     var start = author.IndexOf('<');
-                    var end = author.Length;
+                    var end = author.Length-1;
                     return author.Remove(start, end);
                 }
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Debug.WriteLine(e.Message);
                 return author;
             }
             return author;
