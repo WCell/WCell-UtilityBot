@@ -20,6 +20,7 @@ namespace WCellUtilityBot.ChannelManagment
                                       {
                                           if(!user.Modes.Contains("v"))
                                           user.IrcClient.CommandHandler.Mode(Channel, "+v", User);
+                                          _voiceTimer.Stop();
                                       };
             _voiceTimer.Start();
         }
