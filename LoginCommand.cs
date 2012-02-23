@@ -18,7 +18,7 @@ namespace WCellUtilityBot
         protected override void Initialize()
         {
             Init("login","l");
-            EnglishDescription = "Logs you into the utility bot against the allowed users list (for partyline access)";
+            EnglishDescription = "Logs you into the utility bot";
         }
         public override void Process(WCell.Util.Commands.CmdTrigger<IrcCmdArgs> trigger)
         {
