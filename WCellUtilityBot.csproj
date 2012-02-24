@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="ChannelManagment\AutoVoiceUser.cs" />
     <Compile Include="CommitListener.cs" />
+    <Compile Include="CreateAccountCommand.cs" />
     <Compile Include="DBHandler\DBHandler.cs" />
     <Compile Include="Entities\Account.cs" />
     <Compile Include="IrcConnection.cs" />
