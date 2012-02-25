@@ -34,6 +34,14 @@ namespace WCellUtilityBot
             if (ConsoleMode)
             Console.WriteLine(text);
         }
+        protected override void OnCommandFail(WCell.Util.Commands.CmdTrigger<Squishy.Irc.Commands.IrcCmdArgs> trigger, Exception ex)
+        {
+            //base.OnCommandFail();
+        }
+        protected override void OnExceptionRaised(Exception e)
+        {
+            //base.OnExceptionRaised(e);
+        }
         public override bool MayTriggerCommand(WCell.Util.Commands.CmdTrigger<Squishy.Irc.Commands.IrcCmdArgs> trigger, Squishy.Irc.Commands.IrcCommand cmd)
         {
             return trigger.Args.User.UserLevel >= cmd.RequiredAccountLevel;

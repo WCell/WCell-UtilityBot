@@ -154,5 +154,17 @@ namespace WCellUtilityBot.Properties {
                 this["CommitNotificationChannel"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ErrorChan")]
+        public string ErrorChannel {
+            get {
+                return ((string)(this["ErrorChannel"]));
+            }
+            set {
+                this["ErrorChannel"] = value;
+            }
+        }
     }
 }

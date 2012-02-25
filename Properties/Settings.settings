@@ -35,5 +35,8 @@
     <Setting Name="CommitNotificationChannel" Type="System.String" Scope="User">
       <Value Profile="(Default)">CommitNotificationChan</Value>
     </Setting>
+    <Setting Name="ErrorChannel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ErrorChan</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
