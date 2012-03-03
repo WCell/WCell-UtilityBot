@@ -38,14 +38,32 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>Dependencies\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="AsyncCtpLibrary">
       <HintPath>Dependencies\AsyncCtpLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>Dependencies\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="FluentNHibernate">
       <HintPath>Dependencies\FluentNHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>Dependencies\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>Dependencies\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>Dependencies\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>Dependencies\Remotion.Data.Linq.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Text">
       <HintPath>Dependencies\ServiceStack.Text.dll</HintPath>
@@ -53,6 +71,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Threading.Tasks.Dataflow">
+      <HintPath>Dependencies\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
     <Reference Include="WCell.Util">
       <HintPath>Dependencies\Squishy.Irc\lib\WCell.Util.dll</HintPath>
     </Reference>

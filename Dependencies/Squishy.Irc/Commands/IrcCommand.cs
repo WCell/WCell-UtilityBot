@@ -20,5 +20,9 @@ namespace Squishy.Irc.Commands
     public abstract class IrcCommand : Command<IrcCmdArgs>
     {
         public AccountLevel RequiredAccountLevel = AccountLevel.Guest;
+        protected override void OnFail(CmdTrigger<IrcCmdArgs> trigger, Exception ex)
+        {
+            trigger.Args.IrcClient.CommandFailNotify(trigger, ex);
+        }
     }
 }
