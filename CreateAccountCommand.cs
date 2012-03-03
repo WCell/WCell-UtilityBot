@@ -25,6 +25,7 @@ namespace WCellUtilityBot
                         var acc = new Account { Level = AccountLevel.Guest, PartylineUsername = partylineUser, QUsername = qUsername };
                         session.SaveOrUpdate(acc);
                         transaction.Commit();
+                        trigger.Reply("Created account with partylineuser: " + partylineUser + " and Qusername: " + qUsername);
                     }
         }
     }

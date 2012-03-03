@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Squishy.Irc;
+using WCell.Util;
 using WCellUtilityBot.ChannelManagment;
 
 namespace WCellUtilityBot
@@ -36,11 +37,9 @@ namespace WCellUtilityBot
         }
         protected override void OnCommandFail(WCell.Util.Commands.CmdTrigger<Squishy.Irc.Commands.IrcCmdArgs> trigger, Exception ex)
         {
-            //base.OnCommandFail();
-        }
-        protected override void OnExceptionRaised(Exception e)
-        {
-            //base.OnExceptionRaised(e);
+            CommandHandler.Msg(Properties.Settings.Default.ErrorChannel, "Exception Occured: " + ex.InnerException.Message);
+            foreach (string text in ex.GetAllMessages())
+                CommandHandler.Msg(Properties.Settings.Default.ErrorChannel, text);
         }
         public override bool MayTriggerCommand(WCell.Util.Commands.CmdTrigger<Squishy.Irc.Commands.IrcCmdArgs> trigger, Squishy.Irc.Commands.IrcCommand cmd)
         {
