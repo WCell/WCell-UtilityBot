@@ -28,6 +28,14 @@ namespace WCellUtilityBot
         protected override void Perform()
         {
             base.Perform();
+            var qUser = Properties.Settings.Default.QUser;
+            var qPass = Properties.Settings.Default.QPass;
+            if(!string.IsNullOrWhiteSpace(qUser) && string.IsNullOrWhiteSpace(qPass))
+            {
+                if(ConsoleMode)
+                    Console.WriteLine("Authing with Q.." + qUser);
+                CommandHandler.Msg("Q@Cserve.quakenet.org","auth " + qUser + " " + qPass);
+            }
         }
         protected override void OnBeforeSend(string text)
         {

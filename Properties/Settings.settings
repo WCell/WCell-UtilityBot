@@ -38,5 +38,11 @@
     <Setting Name="ErrorChannel" Type="System.String" Scope="User">
       <Value Profile="(Default)">ErrorChan</Value>
     </Setting>
+    <Setting Name="QUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">QUser</Value>
+    </Setting>
+    <Setting Name="QPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">QPass</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
