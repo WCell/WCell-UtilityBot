@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WCellUtilityBot</RootNamespace>
     <AssemblyName>WCellUtilityBot</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -44,9 +44,6 @@
   <ItemGroup>
     <Reference Include="Antlr3.Runtime">
       <HintPath>Dependencies\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="AsyncCtpLibrary">
-      <HintPath>Dependencies\AsyncCtpLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>Dependencies\Castle.Core.dll</HintPath>

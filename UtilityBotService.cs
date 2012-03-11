@@ -18,10 +18,10 @@ namespace WCellUtilityBot
 
         public static void Run(bool consoleMode)
         {
-            TaskEx.Run(() => { IrcConnection.Irc.BeginConnect(Properties.Settings.Default.IrcServer, Properties.Settings.Default.IrcPort);
+            Task.Run(() => { IrcConnection.Irc.BeginConnect(Properties.Settings.Default.IrcServer, Properties.Settings.Default.IrcPort);
                                IrcConnection.Irc.ConsoleMode = consoleMode;
             });
-            TaskEx.Run(CommitListener.StartListener);
+            Task.Run((Action) CommitListener.StartListener);
         }
 
         protected override void OnStart(string[] args)
