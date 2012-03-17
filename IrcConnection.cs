@@ -30,7 +30,7 @@ namespace WCellUtilityBot
             base.Perform();
             var qUser = Properties.Settings.Default.QUser;
             var qPass = Properties.Settings.Default.QPass;
-            if(!string.IsNullOrWhiteSpace(qUser) && string.IsNullOrWhiteSpace(qPass))
+            if(!string.IsNullOrWhiteSpace(qUser) && !string.IsNullOrWhiteSpace(qPass))
             {
                 if(ConsoleMode)
                     Console.WriteLine("Authing with Q.." + qUser);
