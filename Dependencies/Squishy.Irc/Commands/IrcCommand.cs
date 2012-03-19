@@ -24,5 +24,9 @@ namespace Squishy.Irc.Commands
         {
             trigger.Args.IrcClient.CommandFailNotify(trigger, ex);
         }
+
+        public new abstract class SubCommand : BaseCommand<IrcCmdArgs>.SubCommand
+        {
+        }
     }
 }
